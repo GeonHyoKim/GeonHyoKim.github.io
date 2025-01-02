@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자 야구 게임</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        text-align: center;
+        padding: 20px;
+    }
+    .game-section {
+        margin-top: 30px;
+    }
+    input, button {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .result {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    .alert {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        margin-top: 20px;
+        display: none;
+    }
+    .win {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    .game-image {
+        margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>숫자 야구 게임</h1>
+  <img src="/gameImage/baseball.jpg" alt="야구게임 이미지" style="width: 100px; height: 100px; margin-bottom: 20px;">
+  <div class="game-section">
+
+    <input type="number" id="guessNumber" placeholder="숫자를 입력하세요" min="1000" max="9999" maxlength="4">
+    <button onclick="submitGuess()">제출</button>
+    <div id="resultText" class="result "></div>
+    <button onclick="goBack()" style="margin-top: 20px;">이전 화면</button>
+  </div>
+
+  <div id="alert" class="alert"></div>
+  <div id="gameImage" class="game-image" ></div>
+</div>
+
+<script>
+  let answerNumber;
+  let attemptCount = 0;
+  const resultText = document.getElementById("resultText");
+  const alertBox = document.getElementById("alert");
+  const gameImage = document.getElementById("gameImage");
+
+  // 게임 시작 시 숫자 생성
+  function generateBaseballAnswer() {
+    let digits = [];
+    while (digits.length < 4) {
+        let randomDigit = Math.floor(Math.random() * 10); // 0 ~ 9 사이의 숫자
+        if (!digits.includes(randomDigit)) {  // 중복되는 숫자가 없으면 배열에 추가
+            digits.push(randomDigit);
+        }
+    }
+    answerNumber = digits.join(""); // 배열을 문자열로 합쳐서 answerNumber로 저장
+}
+
+  // 제출 버튼 클릭 시
+  function submitGuess() {
+      const guessNumber = document.getElementById("guessNumber").value;
+
+      // 경고 메시지를 숨김
+      alertBox.style.display = "none";
+
+      if (!guessNumber || guessNumber.length !== 4) {
+          alertBox.innerHTML = "숫자 4자리를 정확히 입력하세요.";
+          alertBox.style.display = "block";
+          return;
+      }
+
+      checkBaseballGuess(Number(guessNumber));
+  }
+
+  // 숫자 야구 게임 로직
+  function checkBaseballGuess(guessNumber) {
+      const guessStr = String(guessNumber);
+      const answerStr = String(answerNumber);
+      let strikeCount = 0;
+      let ballCount = 0;
+
+      // strikeCount 먼저 계산
+    for (let i = 0; i < guessStr.length; i++) {
+        if (guessStr[i] === answerStr[i]) {
+            strikeCount++;
+        }
+    }
+
+    // ballCount 계산 (strikeCount를 제외한 나머지 숫자들만 체크)
+    for (let i = 0; i < guessStr.length; i++) {
+        if (guessStr[i] !== answerStr[i]) {
+            for (let j = 0; j < answerStr.length; j++) {
+                if (guessStr[i] === answerStr[j] && guessStr[j] !== answerStr[j]) {
+                    ballCount++;
+                    break;
+                }
+            }
+        }
+    }
+
+      attemptCount++;
+
+      // 결과 출력
+      resultText.innerText = `Strike: ${strikeCount} Ball: ${ballCount}`;
+
+      if (strikeCount === 4) {
+          showWinDialog();
+          resetGame();
+      } else if (attemptCount >= 10) {
+          showGameOverDialog();
+          resetGame();
+      }
+  }
+
+  // 게임 승리 시 다이얼로그
+  function showWinDialog() {
+      alertBox.innerHTML = `정답입니다! ${attemptCount}번 시도만에 맞추셨습니다.`;
+      alertBox.classList.add("win");
+      alertBox.style.display = "block";
+
+      // 승리 이미지 추가
+      gameImage.innerHTML = '<img src="/gameImage/homerun.jpg" alt="홈런 이미지" >';
+  }
+
+  // 게임 오버 시 다이얼로그
+  function showGameOverDialog() {
+      alertBox.innerHTML = `게임 오버! 정답은 ${answerNumber}입니다. ${attemptCount}번 시도 후 실패했습니다. 다시 도전해 보세요.`;
+      alertBox.classList.remove("win");
+      alertBox.style.display = "block";
+
+      // 실패 이미지 추가
+      gameImage.innerHTML = '<img src="/gameImage/out.jpg" alt="아웃 이미지">';
+  }
+
+  // 게임 리셋
+  function resetGame() {
+      generateBaseballAnswer();
+      attemptCount = 0;
+      document.getElementById("guessNumber").value = "";
+      setTimeout(() => {
+          alertBox.style.display = "none";
+          resultText.innerText = "";
+          gameImage.innerHTML = '';
+      }, 3000);
+  }
+
+  // 이전 화면으로 이동
+  function goBack() {
+      window.history.back();
+  }
+
+  // 페이지 로드 시 게임 초기화
+  generateBaseballAnswer();
+</script>
+
+
+</body>
+</html>
