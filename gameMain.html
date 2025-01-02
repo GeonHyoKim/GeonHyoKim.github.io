@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인 화면</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .container button {
+        padding: 15px 30px;
+        font-size: 18px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    .container button:hover {
+        background-color: #0056b3;
+    }
+    .container .bug-report {
+        margin-top: 20px;
+        background-color: #f44336;
+    }
+    #gameMainContent, #baseballContent {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>게임 선택</h1>
+  <button id="baseball_button">야구 게임</button>
+  <button id="updown_button">업다운 게임</button>
+  <button id="bug_report_button" class="bug-report">버그 신고</button>
+
+  <!-- 게임 콘텐츠 -->
+  <div id="gameMainContent">
+    <h2>게임 선택 화면</h2>
+    <p>여기에서 게임을 선택할 수 있습니다.</p>
+  </div>
+
+
+</div>
+
+<script>
+  // 기본적으로 게임 선택 화면을 표시
+  document.getElementById('gameMainContent').style.display = 'block';
+
+  // 야구 게임 버튼 클릭 시
+  document.getElementById('baseball_button').addEventListener('click', function() {
+      window.location.href = 'baseball.html';
+  });
+
+  // 업다운 게임 버튼 클릭 시
+  document.getElementById('updown_button').addEventListener('click', function() {
+      window.location.href = 'updown.html';  // 업다운 게임 페이지로 이동
+  });
+
+  // 버그 신고 버튼 클릭 시
+  document.getElementById('bug_report_button').addEventListener('click', function() {
+      window.open('https://www.police.go.kr', '_blank');  // 웹 페이지로 열기
+  });
+</script>
+
+</body>
+</html>
