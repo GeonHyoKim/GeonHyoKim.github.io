@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Modern Business - Start Bootstrap Template</title>
+        <title>김건효 포트폴리오</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -159,16 +159,47 @@
             </section>
 
             <!-- 게임 화면 구현 -->
-            <section >
+            <section style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: 100px;">
+                <!-- 게임기 스타일의 외관 -->
+                <div style="background-color: #333; width: 80%; max-width: 1000px; height: 900px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+
+                    <!-- 게임기 화면 (iframe) -->
+                    <div style="width: 100%; height: 80%; background-color: #000; border-radius: 10px; overflow: hidden;">
+                        <iframe src="gameMain.html" style="width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+
+                    <!-- 게임기 컨트롤러 (방향키) -->
+                    <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-around; width: 60%; padding: 0 10px;">
+                        <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
+                            ←
+                        </div>
+                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 120px; width: 60px;">
+                            <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
+                                ↑
+                            </div>
+                            <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
+                                ↓
+                            </div>
+                        </div>
+                        <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
+                            →
+                        </div>
+                    </div>
+
+                </div>
             </section>
+
+
+
+
             <!-- 프로젝트 -->
-            <section class="py-5" id="projectLists" style="margin-top: 200px;">
+            <section class="py-5" id="projectLists" style="background-color: #1a1a1a; padding-top: 50px; margin-top: 200px;">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
                             <div class="text-center">
-                                <h2 class="fw-bolder">Project</h2>
-                                <p class="lead fw-normal text-muted mb-5">깃 주소</p>
+                                <h2 class="fw-bolder text-white">Project</h2>
+                                <p class="lead fw-normal text-muted text-white mb-5">깃 주소</p>
                             </div>
                         </div>
                     </div>
@@ -202,7 +233,7 @@
                                     <img class="card-img-top custom-size" src="/image/deeplearning.jpg" alt="..." />
                                     <div class="card-body p-4">
                                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">Deep Learning</div>
-                                        <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/-DeepLearning"><h5 class="card-title mb-3">딥러닝 - 미세먼지 농도 예측</h5></a>
+                                        <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">딥러닝 - 미세먼지 농도 예측</h5></a>
                                         <p class="card-text mb-0">딥러닝 기술을 활용해 미세먼지를 예측하는 시스템을 주피터 노트북으로 개발했습니다</p>
                                     </div>
                                     <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
@@ -222,10 +253,10 @@
                         <div class="col-lg-4 mb-5">
                             <a href="https://github.com/GeonHyoKim/MobileProgramming" target="_blank" class="text-decoration-none text-dark">
                                 <div class="card h-100 shadow border-0">
-                                    <img class="card-img-top custom-size" src="/image/Android.jpg" alt="..." />
+                                    <img class="card-img-top custom-size" src="/image/android.jpg" alt="..." />
                                     <div class="card-body p-4">
                                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">Mobile Application</div>
-                                        <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/MobileProgramming"><h5 class="card-title mb-3">간단한 모바일 게임 엡</h5></a>
+                                        <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">간단한 모바일 게임 엡</h5></a>
                                         <p class="card-text mb-0">안드로이드 스튜디오를 활용하여 숫자야구와 업다운 게임을 포함한 간단한 게임 앱을 개발했습니다.</p>
                                     </div>
                                     <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
@@ -245,10 +276,10 @@
                         <div class="col-lg-4 mb-5">
                             <a href="https://github.com/GeonHyoKim/-WebProgramming" target="_blank" class="text-decoration-none text-dark">
                                 <div class="card h-100 shadow border-0">
-                                    <img class="card-img-top " src="/image/practice.jpg" alt="https://github.com/GeonHyoKim/-WebProgramming" style="width: 400px; height: 250px;" />
+                                    <img class="card-img-top custom-size" src="/image/practice.jpg" alt="https://github.com/GeonHyoKim/-WebProgramming"  />
                                     <div class="card-body p-4">
                                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">Web Project</div>
-                                        <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/-WebProgramming"><h5 class="card-title mb-3">세입자 관리 시스템</h5></a>
+                                        <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">세입자 관리 시스템</h5></a>
                                         <p class="card-text mb-0">웹 사이트 제작 연습을 하기 위해 세입자 관리 시스템 웹 사이트를 개발했습니다.</p>
                                     </div>
                                     <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
@@ -285,7 +316,7 @@
 <!--                    </aside>-->
                 </div>
                 <!-- 명언 -->
-                <div class="py-5 bg-light ">
+                <div class="py-5 bg-light " style="padding-top: 50px;">
                     <div class="container px-5 my-5">
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-10 col-xl-7">
@@ -311,13 +342,10 @@
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2023</div></div>
+                    <div class="col-auto"><div class="small m-0 text-white">Kim Geon Hyo &copy; PortPolio 2025</div></div>
                     <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Contact</a>
+                        <span class="text-white mx-1">All rights reserved.</span>
+
                     </div>
                 </div>
             </div>
