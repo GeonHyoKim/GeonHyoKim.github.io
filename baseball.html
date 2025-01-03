@@ -48,16 +48,18 @@
 
 <div class="container">
   <h1>숫자 야구 게임</h1>
-  <img src="/gameImage/baseball.jpg" alt="야구게임 이미지" style="width: 100px; height: 100px; margin-bottom: 20px;">
-  <div class="game-section">
 
-    <input type="number" id="guessNumber" placeholder="숫자를 입력하세요" min="1000" max="9999" maxlength="4">
-    <button onclick="submitGuess()">제출</button>
+  <img src="/gameImage/baseball.jpg" alt="야구게임 이미지" style="width: 250px; height: 250px; margin-top: 20px; margin-bottom: 10px;">
+  <div class="game-section">
+    <div id="alert" class="alert"></div>
     <div id="resultText" class="result "></div>
+    <input type="number" id="guessNumber" placeholder="입력" min="1000" max="9999" maxlength="4">
+    <button onclick="submitGuess()">제출</button>
+
     <button onclick="goBack()" style="margin-top: 20px;">이전 화면</button>
   </div>
 
-  <div id="alert" class="alert"></div>
+
   <div id="gameImage" class="game-image" ></div>
 </div>
 
