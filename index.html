@@ -130,31 +130,45 @@
 
             <!-- 게임 화면 구현 -->
             <section style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: 100px;">
+
                 <!-- 게임기 스타일의 외관 -->
-                <div style="background-color: #333; width: 80%; max-width: 1000px; height: 900px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div style="background-color: #333; width: 80%; max-width: 1000px; height: 800px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
 
                     <!-- 게임기 화면 (iframe) -->
-                    <div style="width: 100%; height: 80%; background-color: #000; border-radius: 10px; overflow: hidden;">
+                    <div style="width: 100%; height: 70%; background-color: #000; border-radius: 10px; overflow: hidden;">
                         <iframe src="gameMain.html" style="width: 100%; height: 100%; border: none;"></iframe>
                     </div>
 
                     <!-- 게임기 컨트롤러 (방향키) -->
-                    <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-around; width: 60%; padding: 0 10px;">
+                    <div style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); display: grid; grid-template-rows: repeat(3, 60px); grid-template-columns: repeat(3, 60px); gap: 10px; justify-content: center; align-items: center;">
+                        <!-- 빈칸 -->
+                        <div></div>
+                        <!-- ↑ -->
+                        <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
+                            ↑
+                        </div>
+                        <!-- 빈칸 -->
+                        <div></div>
+                        <!-- ← -->
                         <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
                             ←
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 120px; width: 60px;">
-                            <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
-                                ↑
-                            </div>
-                            <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
-                                ↓
-                            </div>
-                        </div>
+                        <!-- 빈칸 (가운데) -->
+                        <div></div>
+                        <!-- → -->
                         <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
                             →
                         </div>
+                        <!-- 빈칸 -->
+                        <div></div>
+                        <!-- ↓ -->
+                        <div style="width: 60px; height: 60px; border-radius: 10px; background-color: #555; border: 2px solid #888; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 20px;">
+                            ↓
+                        </div>
+                        <!-- 빈칸 -->
+                        <div></div>
                     </div>
+
 
                 </div>
             </section>
@@ -175,97 +189,138 @@
                     </div>
                     <div class="row gx-5">
                         <div class="col-lg-4 mb-5">
-                            <a href="https://github.com/GeonHyoKim/Copi" target="_blank" class="text-decoration-none text-dark">
                                 <div class="card h-100 shadow border-0 ">
-                                    <img class="card-img-top custom-size" src="/image/copi1.jpg" alt="..." />
-                                    <div class="card-body p-4">
-                                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Web Project</div>
-                                        <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/Copi"><h5 class="card-title mb-3">Copi - 소개팅 웹사이트</h5></a>
-                                        <p class="card-text mb-0">카카오맵 API, Toss Payments API, Geolocation을 활용해 주변 친구를 찾을 수 있는 소개팅 웹사이트를 개발했습니다.</p>
+                                    <div class="image-slider">
+                                        <div class="slider-container">
+                                            <img class="slider-image custom-size" src="/image/copi1.jpg" alt="Image 1">
+                                            <img class="slider-image custom-size" src="/image/copi2.jpg" alt="Image 2">
+                                            <img class="slider-image custom-size" src="/image/copi3.jpg" alt="Image 3">
+                                            <img class="slider-image custom-size" src="/image/copi4.jpg" alt="Image 4">
+                                        </div>
+                                        <button class="arrow left-arrow">←</button>
+                                        <button class="arrow right-arrow">→</button>
                                     </div>
-                                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                        <div class="d-flex align-items-end justify-content-between">
-                                            <div class="d-flex align-items-center">
-                                                <img class="rounded-circle me-3" src="/image/git.jpg" alt="..." />
-                                                <div class="small">
-                                                    <div class="fw-bold">Copi - Git 주소</div>
-                                                    <div class="text-muted">December 24, 2023</div>
+                                    <a href="https://github.com/GeonHyoKim/Copi" target="_blank" class="text-decoration-none text-dark">
+                                        <div class="card-body p-4">
+                                            <div class="badge bg-primary bg-gradient rounded-pill mb-2">Web Project</div>
+                                            <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/Copi"><h5 class="card-title mb-3">Copi - 소개팅 웹사이트</h5></a>
+                                            <p class="card-text mb-0">카카오맵 API, Toss Payments API, Geolocation을 활용해 주변 친구를 찾을 수 있는 소개팅 웹사이트를 개발했습니다.</p>
+                                        </div>
+                                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                            <div class="d-flex align-items-end justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                    <img class="rounded-circle me-3" src="/image/git.jpg" alt="..." />
+                                                    <div class="small">
+                                                        <div class="fw-bold">Copi - Git 주소</div>
+                                                        <div class="text-muted">December 24, 2023</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </a>
                         </div>
                         <div class="col-lg-4 mb-5">
-                            <a href="https://github.com/GeonHyoKim/-DeepLearning" target="_blank" class="text-decoration-none text-dark">
-                                <div class="card h-100 shadow border-0">
-                                    <img class="card-img-top custom-size" src="/image/deeplearning.jpg" alt="..." />
-                                    <div class="card-body p-4">
-                                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Deep Learning</div>
-                                        <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/-DeepLearning"><h5 class="card-title mb-3">딥러닝 - 미세먼지 농도 예측</h5></a>
-                                        <p class="card-text mb-0">딥러닝 기술을 활용해 미세먼지를 예측하는 시스템을 주피터 노트북으로 개발했습니다</p>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                        <div class="d-flex align-items-end justify-content-between">
-                                            <div class="d-flex align-items-center">
-                                                    <img class="rounded-circle me-3" src="/image/git.jpg" alt="..." />
-                                                    <div class="small">
-                                                        <div class="fw-bold">Deep Learning - Git 주소</div>
-                                                        <div class="text-muted">December 12, 2023</div>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 mb-5">
-                            <a href="https://github.com/GeonHyoKim/MobileProgramming" target="_blank" class="text-decoration-none text-dark">
-                                <div class="card h-100 shadow border-0">
-                                    <img class="card-img-top custom-size" src="/image/Android.jpg" alt="..." />
-                                    <div class="card-body p-4">
-                                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Mobile Application</div>
-                                        <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/MobileProgramming"><h5 class="card-title mb-3">간단한 모바일 게임 엡</h5></a>
-                                        <p class="card-text mb-0">안드로이드 스튜디오를 활용하여 숫자야구와 업다운 게임을 포함한 간단한 게임 앱을 개발했습니다.</p>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                        <div class="d-flex align-items-end justify-content-between">
-                                            <div class="d-flex align-items-center">
-                                                    <img class="rounded-circle me-3" src="/image/git.jpg" alt="..." />
-                                                    <div class="small">
-                                                        <div class="fw-bold">Mobile Application - Git 주소</div>
-                                                        <div class="text-muted">June 21, 2023</div>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 mb-5">
-                            <a href="https://github.com/GeonHyoKim/-WebProgramming" target="_blank" class="text-decoration-none text-dark">
-                                <div class="card h-100 shadow border-0">
-                                    <img class="card-img-top custom-size" src="/image/practice.jpg" alt="https://github.com/GeonHyoKim/-WebProgramming"  />
-                                    <div class="card-body p-4">
-                                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Web Project</div>
-                                        <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/-WebProgramming"><h5 class="card-title mb-3">세입자 관리 시스템</h5></a>
-                                        <p class="card-text mb-0">웹 사이트 제작 연습을 하기 위해 세입자 관리 시스템 웹 사이트를 개발했습니다.</p>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                        <div class="d-flex align-items-end justify-content-between">
-                                            <div class="d-flex align-items-center">
-                                                    <img class="rounded-circle me-3" src="/image/git.jpg" alt="..." />
-                                                    <div class="small">
-                                                        <div class="fw-bold">세입자 관리 시스템 - Git 주소</div>
-                                                        <div class="text-muted">December 16, 2022</div>
-                                                    </div>
 
+                                <div class="card h-100 shadow border-0">
+                                    <div class="image-slider">
+                                        <div class="slider-container">
+                                            <img class="slider-image custom-size" src="/image/deeplearning1.jpg" alt="Image 1">
+                                            <img class="slider-image custom-size" src="/image/deeplearning2.jpg" alt="Image 2">
+                                            <img class="slider-image custom-size" src="/image/deeplearning3.jpg" alt="Image 3">
+                                            <img class="slider-image custom-size" src="/image/deeplearning4.jpg" alt="Image 4">
+                                        </div>
+                                        <button class="arrow left-arrow">←</button>
+                                        <button class="arrow right-arrow">→</button>
+                                    </div>
+                                    <a href="https://github.com/GeonHyoKim/-DeepLearning" target="_blank" class="text-decoration-none text-dark">
+                                        <div class="card-body p-4">
+                                            <div class="badge bg-primary bg-gradient rounded-pill mb-2">Deep Learning</div>
+                                            <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/-DeepLearning"><h5 class="card-title mb-3">딥러닝 - 미세먼지 농도 예측</h5></a>
+                                            <p class="card-text mb-0">딥러닝 기술을 활용해 미세먼지를 예측하는 시스템을 주피터 노트북으로 개발했습니다</p>
+                                        </div>
+                                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                            <div class="d-flex align-items-end justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                        <img class="rounded-circle me-3" src="/image/git.jpg" alt="..." />
+                                                        <div class="small">
+                                                            <div class="fw-bold">Deep Learning - Git 주소</div>
+                                                            <div class="text-muted">December 12, 2023</div>
+                                                        </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </a>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+
+                                <div class="card h-100 shadow border-0">
+                                    <div class="image-slider">
+                                        <div class="slider-container">
+                                            <img class="slider-image custom-size" src="/image/Android.jpg" alt="Image 1">
+                                            <img class="slider-image custom-size" src="/image/Android2.jpg" alt="Image 2">
+                                            <img class="slider-image custom-size" src="/image/Android3.jpg" alt="Image 3">
+                                            <img class="slider-image custom-size" src="/image/Android4.jpg" alt="Image 4">
+                                        </div>
+                                        <button class="arrow left-arrow">←</button>
+                                        <button class="arrow right-arrow">→</button>
+                                    </div>
+                                    <a href="https://github.com/GeonHyoKim/MobileProgramming" target="_blank" class="text-decoration-none text-dark">
+                                        <div class="card-body p-4">
+                                            <div class="badge bg-primary bg-gradient rounded-pill mb-2">Mobile Application</div>
+                                            <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/MobileProgramming"><h5 class="card-title mb-3">간단한 모바일 게임 엡</h5></a>
+                                            <p class="card-text mb-0">안드로이드 스튜디오를 활용하여 숫자야구와 업다운 게임을 포함한 간단한 게임 앱을 개발했습니다.</p>
+                                        </div>
+                                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                            <div class="d-flex align-items-end justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                        <img class="rounded-circle me-3" src="/image/git.jpg" alt="..." />
+                                                        <div class="small">
+                                                            <div class="fw-bold">Mobile Application - Git 주소</div>
+                                                            <div class="text-muted">June 21, 2023</div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                        </div>
+                        <div class="col-lg-4 mb-5">
+
+                                <div class="card h-100 shadow border-0">
+                                    <div class="image-slider">
+                                        <div class="slider-container">
+                                            <img class="slider-image custom-size" src="/image/practice.jpg" alt="Image 1">
+                                            <img class="slider-image custom-size" src="/image/practice2.jpg" alt="Image 2">
+                                            <img class="slider-image custom-size" src="/image/practice3.jpg" alt="Image 3">
+                                            <img class="slider-image custom-size" src="/image/practice4.jpg" alt="Image 4">
+                                        </div>
+                                        <button class="arrow left-arrow">←</button>
+                                        <button class="arrow right-arrow">→</button>
+                                    </div>
+                                    <a href="https://github.com/GeonHyoKim/-WebProgramming" target="_blank" class="text-decoration-none text-dark">
+                                        <div class="card-body p-4">
+                                            <div class="badge bg-primary bg-gradient rounded-pill mb-2">Web Project</div>
+                                            <a class="text-decoration-none link-dark stretched-link" href="https://github.com/GeonHyoKim/-WebProgramming"><h5 class="card-title mb-3">세입자 관리 시스템</h5></a>
+                                            <p class="card-text mb-0">웹 사이트 제작 연습을 하기 위해 세입자 관리 시스템 웹 사이트를 개발했습니다.</p>
+                                        </div>
+                                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                            <div class="d-flex align-items-end justify-content-between">
+                                                <div class="d-flex align-items-center">
+                                                        <img class="rounded-circle me-3" src="/image/git.jpg" alt="..." />
+                                                        <div class="small">
+                                                            <div class="fw-bold">세입자 관리 시스템 - Git 주소</div>
+                                                            <div class="text-muted">December 16, 2022</div>
+                                                        </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
                         </div>
                     </div>
 
@@ -309,5 +364,32 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+            document.querySelectorAll('.image-slider').forEach((slider) => {
+    const images = slider.querySelectorAll('.slider-image');
+    const leftArrow = slider.querySelector('.left-arrow');
+    const rightArrow = slider.querySelector('.right-arrow');
+    let currentIndex = 0;
+
+    // 초기화 - 첫 번째 이미지를 보이게 설정
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.style.display = i === index ? 'block' : 'none';
+        });
+    }
+    showImage(currentIndex);
+
+    // 화살표 클릭 이벤트
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    });
+});
+        </script>
     </body>
 </html>
