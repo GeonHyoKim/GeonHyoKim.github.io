@@ -10839,6 +10839,7 @@ html {
         width: 376px;
         height: 250px;
         object-fit: cover;
+        display: none;
  }
 
  .rounded-circle{
@@ -10867,3 +10868,45 @@ html {
      margin: 0;
  }
 
+
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 300%;
+}
+
+.slider-image {
+    flex-shrink: 0;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.slider-image.custom-size.active {
+        display: block; /* 활성화된 이미지만 보이게 설정 */
+    }
